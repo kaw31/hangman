@@ -1,0 +1,246 @@
+@font-face {
+    font-family: chalk;
+    src: url(../fonts/eraser/EraserRegular.ttf);
+}
+
+
+body {
+    background-color: #10392b;
+    height: 100%;
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+    color: white;
+    text-align:center;
+    font-size:18px;
+    font-family: chalk, sans-serif;
+    overflow-y: scroll;
+}
+
+img.bgImg {
+    /* Set rules to fill background */
+    min-height: 100%;
+    min-width: 1024px;
+    /* Set up proportionate scaling */
+    width: 100%;
+    height: auto;
+    /* Set up positioning */
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: -5;
+}
+
+/*
+.bgImg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -5;
+}
+*/
+
+.wrappper {
+    @include clear;
+    width:100%;
+    margin:0 auto;
+}
+
+h1 {
+	font-size: 2em;
+    margin: 20px auto 10px; 
+    font-family: chalk, sans-serif;
+    text-transform: uppercase;
+    font-weight: 100;
+}
+
+canvas{
+    color: white;
+    width: 150px;
+}
+
+#catagoryName {
+    margin: 5px;
+    font-size: 0.9em;
+}
+
+p {
+    font-size: 1em;
+}
+
+/* ====== WORD TO GUESS ======= */
+
+#my-word {
+    margin: 0 auto;
+    display: block;
+    padding: 0;
+    display:block;
+    max-width: 90%;
+}
+
+#my-word li {
+    position: relative;
+    list-style: none;
+    margin: 0;
+    display: inline-block;
+    padding: 0 10px;
+    width: 10px;
+    height: 10px;
+}
+
+#hold {
+    font-size: 1.5em;
+    margin: 20px 5px;
+}
+
+/* ====== LIVES, ANSWER, HINT ======= */
+
+#mylives{
+    font-size:1.2em;
+    text-align:center;
+    display:block;
+    margin: 30px 20px;
+}
+
+/*
+#answer {
+    position: relative;
+    top: vh;
+    left: 0;
+    right: 0;
+    margin: 0 12px;
+    font-size: 0.9em;
+}
+*/
+
+/*
+#clue {
+    position: relative;
+    top: 2vh;
+    left: 0;
+    right: 0;
+    font-size: 0.8em;
+    margin: 0 20px;
+}
+*/
+
+/* ====== BUTTONS AND LETTERS ======= */
+
+/*
+.bottom {
+    position: absolute;
+    bottom: 2vh;
+    left: 0;
+    right: 0;
+}
+*/
+
+button{
+    @include corners (5px);
+    background-color: rgba(0, 0, 0, 0);
+    color: white;
+    border: solid 0px white;
+    text-decoration:none;
+    cursor:pointer;
+    font-size:1.2em;
+    padding:5px 5px;
+    width:150px;
+    margin: 0px;
+    outline: none;
+    font-family: chalk;
+}
+
+button:hover {
+    transform: scale(1.3);
+}
+
+#alphabet {
+    margin: 20px auto;
+    position: relative;
+    display: flex;
+    width: 80%;
+    height: 150px;
+    max-width: 580px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 0;
+}
+
+#alphabet li {
+    float:left;
+    margin: 0 10px 10px 0;
+    list-style:none;
+    width:20px;
+    height:20px;  
+    color:  white;
+    cursor:pointer;
+    font-size: 1.4em;
+ }
+   
+#alphabet li:hover {
+    transform: scale(1.3);
+}
+
+/*pressed letters*/
+.active {
+    @include clear;
+    cursor: default;
+    pointer-events: none;
+    opacity: 0;
+}
+
+/* ================ LARGE MOBILES ================== */
+
+@media only screen and (min-device-width: 488px) and (min-width: 488px) {
+  
+    #alphabet {
+        width: 389px;
+    }
+    
+    canvas {
+        width: 200px;
+    }
+    
+}
+
+/* ================ TABLETS ================== */
+
+@media only screen and (min-device-width: 488px) and (min-width : 768px) {
+    
+    h1 {
+        font-size: 3em;
+        margin-top: 40px;
+    }
+    
+    canvas {
+        width: 200px;
+    }
+    
+/*
+    #answer {
+        top: 1vh;
+    }
+    
+    #clue {
+        top: 4vh;
+    }
+    
+    .bottom {
+        bottom: 6vh;
+    }
+*/
+       
+}
+
+
+@media screen and (max-width: 1024px) { /* Specific to this particular image */
+    img.bg {
+        left: 50%;
+        margin-left: -512px;   /* 50% */
+    }
+}
+
+
+
