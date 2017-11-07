@@ -207,7 +207,7 @@ button:hover {
 
 /* ================ TABLETS ================== */
 
-@media only screen and (min-device-width: 488px) and (min-width : 768px) {
+@media only screen and (min-device-width: 768px) and (min-width : 768px) {
     
     h1 {
         font-size: 3em;
